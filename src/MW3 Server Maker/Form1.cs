@@ -11,14 +11,10 @@ namespace MW3_Server_Maker
 {
     public partial class Form1 : MetroForm
     {
-        private readonly string configPath = $"{Environment.CurrentDirectory}\\config.mv";
-        private readonly string defaultPath = $"{Environment.CurrentDirectory}\\players2\\default.dspl";
+        private readonly string _configPath = $"{Environment.CurrentDirectory}\\config.mv";
+        private readonly string _defaultPath = $"{Environment.CurrentDirectory}\\players2\\default.dspl";
 
-        private Default dspl;
-        private string map = string.Empty;
-        private string mod = string.Empty;
-        private bool hardCore = false;
-        private int priority;
+        private Default _dspl;
 
         public Form1()
         {
@@ -27,11 +23,11 @@ namespace MW3_Server_Maker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dspl = new Default(defaultPath);
-            if (File.Exists(defaultPath))
+            _dspl = new Default(_defaultPath);
+            if (File.Exists(_defaultPath))
             {
-                dspl.Read();
-                foreach (var rotation in dspl.Rotations)
+                _dspl.Read();
+                foreach (var rotation in _dspl.Rotations)
                 {
                     string[] result = rotation.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                     var map = Utils.FindMap(result[0].Trim());
@@ -42,68 +38,65 @@ namespace MW3_Server_Maker
                 }
             }
 
-            if (!File.Exists(configPath))
+            if (File.Exists(_configPath))
+            {
+                IniReader iniReader = new IniReader(_configPath);
+                cb_map.Text = iniReader.ReadString("Server", "Map", "Aground");
+                cb_mod.Text = iniReader.ReadString("Server", "Mod", "Capture The Flag");
+                cb_hardCore.Text = iniReader.ReadString("Server", "HardCore", "Enable");
+                cb_priority.Text = iniReader.ReadString("Server", "Priority", "1");
+            }
+            else
             {
                 cb_map.SelectedIndex = 0;
                 cb_mod.SelectedIndex = 0;
                 cb_hardCore.SelectedIndex = 0;
                 cb_priority.SelectedIndex = 0;
             }
-            else
-            {
-                IniReader iniReader = new IniReader(configPath);
-                cb_map.Text = iniReader.ReadString("Server", "Map", "Aground");
-                cb_mod.Text = iniReader.ReadString("Server", "Mod", "Capture The Flag");
-                cb_hardCore.Text = iniReader.ReadString("Server", "HardCore", "Enable");
-                cb_priority.Text = iniReader.ReadString("Server", "Priority", "1");
-            }
         }
 
         private void cb_map_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var type = Utils.Map(cb_map.SelectedItem.ToString());
-            pictureBox1.Image = Utils.Image(type);
-            map = Utils.Map(type);
-        }
-
-        private void cb_mod_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var type = Utils.Mod(cb_mod.SelectedItem.ToString());
-            mod = Utils.Mod(type, hardCore);
-        }
-
-        private void cb_hardCore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            hardCore = cb_hardCore.SelectedIndex == 0;
-        }
-
-        private void cb_priority_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            priority = Utils.Priority(cb_priority.SelectedItem.ToString());
+            var mapType = Utils.Map(cb_map.SelectedItem.ToString());
+            pictureBox1.Image = Utils.Image(mapType);
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            dspl.Rotations.Clear();
+            _dspl.Rotations.Clear();
             listDspl.Items.Clear();
+            _dspl.Write();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            dspl.Add(map, mod, priority);
-            listDspl.Items.Add(new ListViewItem(new string[] { cb_map.SelectedItem.ToString(), cb_mod.SelectedItem.ToString(), (cb_hardCore.SelectedIndex == 0).ToString(), cb_priority.SelectedItem.ToString() }));
+            string selectedMap = cb_map.SelectedItem.ToString();
+            string selectedMod = cb_mod.SelectedItem.ToString();
+            bool isHardCore = cb_hardCore.SelectedIndex == 0;
+            string selectedPriority = cb_priority.SelectedItem.ToString();
+
+            var mapType = Utils.Map(cb_map.SelectedItem.ToString());
+            var map = Utils.Map(mapType);
+
+            var modType = Utils.Mod(cb_mod.SelectedItem.ToString());
+            var mod = Utils.Mod(modType, isHardCore);
+
+            var priority = Utils.Priority(cb_priority.SelectedItem.ToString());
+
+            _dspl.Add(map, mod, priority);
+            listDspl.Items.Add(new ListViewItem(new string[] { selectedMap, selectedMod, (isHardCore).ToString(), selectedPriority }));
+            _dspl.Write();
         }
 
         private void btn_start_Click(object sender, EventArgs e)
         {
             if (File.Exists("TeknoMW3_Server_Launcher.exe"))
             {
-                IniReader iniReader = new IniReader(configPath);
+                IniReader iniReader = new IniReader(_configPath);
                 iniReader.Write("Server", "Map", cb_map.Text);
                 iniReader.Write("Server", "Mod", cb_mod.Text);
                 iniReader.Write("Server", "HardCore", cb_hardCore.Text);
                 iniReader.Write("Server", "Priority", cb_priority.Text);
-                dspl.Write();
                 Process.Start("TeknoMW3_Server_Launcher.exe", "start_map_rotate");
                 Application.Exit();
             }

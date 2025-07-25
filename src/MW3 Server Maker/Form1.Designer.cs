@@ -45,10 +45,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAbout = new MetroFramework.Controls.MetroButton();
             this.cb_hardCore = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +92,6 @@
             this.cb_mod.TabIndex = 9;
             this.cb_mod.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cb_mod.UseSelectable = true;
-            this.cb_mod.SelectedIndexChanged += new System.EventHandler(this.cb_mod_SelectedIndexChanged);
             // 
             // cb_map
             // 
@@ -255,7 +254,6 @@
             this.cb_priority.TabIndex = 17;
             this.cb_priority.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cb_priority.UseSelectable = true;
-            this.cb_priority.SelectedIndexChanged += new System.EventHandler(this.cb_priority_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
@@ -304,6 +302,11 @@
             this.columnHeader3.Text = "HardCore";
             this.columnHeader3.Width = 89;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Priority";
+            this.columnHeader4.Width = 89;
+            // 
             // btnAbout
             // 
             this.btnAbout.Location = new System.Drawing.Point(825, 598);
@@ -332,7 +335,6 @@
             this.cb_hardCore.TabIndex = 22;
             this.cb_hardCore.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cb_hardCore.UseSelectable = true;
-            this.cb_hardCore.SelectedIndexChanged += new System.EventHandler(this.cb_hardCore_SelectedIndexChanged);
             // 
             // metroLabel4
             // 
@@ -345,11 +347,6 @@
             this.metroLabel4.TabIndex = 21;
             this.metroLabel4.Text = "Hard Core   ";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Priority";
-            this.columnHeader4.Width = 89;
             // 
             // Form1
             // 

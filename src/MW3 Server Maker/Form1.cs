@@ -1,11 +1,9 @@
-﻿using MetroFramework;
-using MetroFramework.Forms;
-using System;
-using System.Diagnostics;
+﻿using System;
 using System.IO;
-using System.Reflection;
-using System.Text;
+using System.Diagnostics;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 
 namespace MW3_Server_Maker
 {
@@ -114,8 +112,7 @@ namespace MW3_Server_Maker
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            var version = Assembly.GetExecutingAssembly().GetName().Version;
-            MetroMessageBox.Show(this, $"Developer: Soheil MV\nGithub: https://github.com/SoheilMV\nRepository: https://github.com/SoheilMV/MW3-Server-Maker\nVersion: {version.Major}.{version.Minor}", "MW3 Server Maker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MetroMessageBox.Show(this, $"Developer: Soheil Jashnsaz\nGithub: https://github.com/soheil-js\nRepository: https://github.com/soheil-js/MW3-Server-Maker\nVersion: {AppVersion.Get()}", "MW3 Server Maker", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

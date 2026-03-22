@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
+using System.Collections.Generic;
 
 namespace MW3_Server_Maker
 {

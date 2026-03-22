@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppVersion.cs" />
     <Compile Include="Models\Default.cs" />
     <Compile Include="Utility\Utils.cs" />
     <Compile Include="Utility\IniReader.cs" />

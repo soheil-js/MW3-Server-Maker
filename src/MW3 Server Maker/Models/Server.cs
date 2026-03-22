@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Windows.Input;
 
 namespace MW3_Server_Maker
 {
@@ -55,7 +53,7 @@ namespace MW3_Server_Maker
             KickBanTime = "0";
             FloodProtect = "1";
             MaxPing = "500";
-            ClanWebsite = "https://github.com/soheilmv";
+            ClanWebsite = "https://github.com/soheil-js";
             Discord = "https://discord.gg/HbG3kQ5";
             ServerFullMessage = "The server is full. Come back later.";
             BanByGuid = "0";

@@ -33,7 +33,7 @@ namespace MW3_Server_Maker
         public void Write()
         {
             byte[] bytes = Properties.Resources.Default;
-            string content = Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+            string content = Encoding.UTF8.GetString(bytes);
             StringBuilder sb = new StringBuilder();
             using (StringWriter sw = new StringWriter(sb))
             {

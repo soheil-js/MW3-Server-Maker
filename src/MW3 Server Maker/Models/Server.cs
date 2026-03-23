@@ -2,6 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace MW3_Server_Maker
 {
@@ -10,6 +11,10 @@ namespace MW3_Server_Maker
         private readonly string _path;
         private List<string> scripts = new List<string>();
         private List<string> commands = new List<string>();
+
+        public bool HasScripts { get; set; }
+        public bool HasCommands { get; set; }
+        
 
         public string HostName { get; set; }
         public string MapRotation { get; set; }
@@ -90,9 +95,11 @@ namespace MW3_Server_Maker
             if (File.Exists(_path))
             {
                 string[] lines = File.ReadAllLines(_path);
+                HasScripts = !lines.Any(x => x.Contains("//loadScript \"MyScript.dll\""));
+                HasCommands = lines.Any(x => x.Contains("//Other Command"));
                 foreach (var line in lines)
                 {
-                    if (!string.IsNullOrEmpty(line) && !line.StartsWith("//"))
+                    if (!string.IsNullOrWhiteSpace(line) && !line.StartsWith("//"))
                     {
                         if (line.Contains("sv_hostname"))
                         {
@@ -246,7 +253,7 @@ namespace MW3_Server_Maker
         public void Write()
         {
             byte[] bytes = Properties.Resources.Server;
-            string content = Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+            string content = Encoding.UTF8.GetString(bytes);
 
             content = content.Replace("<sv_hostname>", HostName.Trim())
                 .Replace("<sv_maprotation>", MapRotation.Trim())
@@ -277,23 +284,27 @@ namespace MW3_Server_Maker
             using (StringWriter sw = new StringWriter(sb))
             {
                 sw.Write(content);
-                if (scripts.Count > 0)
+                if (scripts.Count > 0 && HasScripts)
                 {
                     foreach (var line in scripts)
                         sw.WriteLine($"loadScript \"{line}\"");
                 }
                 else
                     sw.WriteLine("//loadScript \"MyScript.dll\"");
-                sw.WriteLine();
-                sw.WriteLine();
-                if (commands.Count > 0)
+
+                if (commands.Count > 0 && HasCommands)
                 {
+                    sw.WriteLine();
+                    sw.WriteLine();
                     sw.WriteLine("//Other Command");
                     foreach (var cmd in commands)
                     {
                         sw.WriteLine(cmd);
                     }
+                    sw.WriteLine();
                 }
+                else
+                    sw.WriteLine();
             }
             File.WriteAllText(_path, sb.ToString());
         }

@@ -67,42 +67,38 @@
 
 
 
-
-
 //////////////////////////////////////////
 //              Game Modes              //
 //////////////////////////////////////////
 
 
 // # Warning
-// - Replace "XXX" with "Core" or "Hardcore".
-//   * "Core" is Default and "Hardcore" is Hardcore.
+// - Replace "XXX" with "SC" or "HC".
+//   * "SC" is Default and "HC" is Hardcore.
 // - Don't forget that the .dsr files are game modes (with their settings), if you don't have a file named "Example.dsr" you shouldn't put "Example" in the rotation.
-// - The section "Players" is just informative, you are not forced to have 4 players minimum and 8 maximum (4 - 8).
+// - You can edit the .dsr files with a text editor, if you want to change settings, such as time limit etc.
 
 
 // # Standard
-// - Free For All        =  FFA-XXX   -  Players: 4 - 8
-// - Team Deathmatch     =  TDM-XXX   -  Players: 8 - 12
-// - Search and Destroy  =  SD-XXX    -  Players: 8 - 12
-// - Sabotage            =  SAB-XXX   -  Players: 8 - 12
-// - Domination          =  DOM-XXX   -  Players: 8 - 12
-// - Headquarters        =  HQ-XXX    -  Players: 8 - 12
-// - Capture The Flag    =  CTF-XXX   -  Players: 8 - 12
-// - Demolition          =  DD-XXX    -  Players: 8 - 12
-// - Kill Confirmed      =  KC-XXX    -  Players: 8 - 12
-// - Team Defender       =  TDEF-XXX  -  Players: 8 - 12
+// - Free For All        =  FFA-XXX
+// - Team Deathmatch     =  TDM-XXX
+// - Search and Destroy  =  SD-XXX
+// - Sabotage            =  SAB-XXX
+// - Domination          =  DOM-XXX
+// - Headquarters        =  HQ-XXX
+// - Capture The Flag    =  CTF-XXX
+// - Demolition          =  DD-XXX
+// - Kill Confirmed      =  KC-XXX
+// - Team Defender       =  TDEF-XXX
 
 
 // # Alternative
-// - Drop Zone           =  DZ-XXX    -  Players: Without Information
-// - Team Juggernaut     =  TJ-XXX    -  Players: Without Information
-// - Juggernaut          =  JUG-XXX   -  Players: Without Information
-// - Gun Game            =  GG-XXX    -  Players: Without Information
-// - Infected            =  INF-XXX   -  Players: Without Information
-// - One In The Chamber  =  OIC-XXX   -  Players: Without Information
-
-
+// - Drop Zone           =  DZ-XXX
+// - Team Juggernaut     =  TJ-XXX
+// - Juggernaut          =  JUG-XXX
+// - Gun Game            =  GG-XXX
+// - Infected            =  INF-XXX
+// - One In The Chamber  =  OIC-XXX
 
 
 
@@ -111,10 +107,19 @@
 ////////////////////////////////////////
 
 
-// # Formatting is like this
-// - <Map Name>, <Game Mode.dsr>, <Probability>
-// - Random Map (Includes DLC Maps): *
-// - Probability: 1 - 1000
+// # Format for a map rotation entry is:
+//
+// - <Map Name>, <Game Mode DSR>, <Probability>
+//   - Map Names are listed above, starting with "mp_".
+//   - Game Mode DSR's that are included in this package of configuration files are listed above too.
+//   - Probability: 1 - 1000 (selection is weighted random - higher values increase selection chance).
+//
+// - Below is an example of map rotation.
+// - Edit this map rotation according to your preferences with your maps and game modes.
+//
+// - By default, the map rotation is more or less random.
+// - If you want the maps to rotate in a fixed order, set the DVAR "sv_fixedMapRotation" to "1" in your Server.cfg
+//
 // - You can only put up to 16 maps maximum!
 
 

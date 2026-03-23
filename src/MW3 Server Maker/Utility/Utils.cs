@@ -265,7 +265,7 @@ namespace MW3_Server_Maker
 
         public static string Mod(ModType mod, bool hardCore)
         {
-            var type = (hardCore ? "Hardcore" : "Core");
+            var type = (hardCore ? "HC" : "SC");
             if (mod == ModType.TeamDeathmatch)
                 return "TDM-" + type;
             else if (mod == ModType.Domination)

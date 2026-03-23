@@ -7,22 +7,19 @@ using MetroFramework.Forms;
 
 namespace MW3_Server_Maker
 {
-    public partial class Form1 : MetroForm
+    public partial class FormMain : MetroForm
     {
-        private readonly string _configPath = $"{Environment.CurrentDirectory}\\config.mv";
-        private readonly string _defaultPath = $"{Environment.CurrentDirectory}\\players2\\default.dspl";
+        private readonly Default _dspl;
 
-        private Default _dspl;
-
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
+            _dspl = new Default(PathProvider.DsplFilePath);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormMain_Load(object sender, EventArgs e)
         {
-            _dspl = new Default(_defaultPath);
-            if (File.Exists(_defaultPath))
+            if (File.Exists(PathProvider.DsplFilePath))
             {
                 _dspl.Read();
                 foreach (var rotation in _dspl.Rotations)
@@ -30,15 +27,15 @@ namespace MW3_Server_Maker
                     string[] result = rotation.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                     var map = Utils.FindMap(result[0].Trim());
                     var mod = Utils.FindMod(result[1].Trim());
-                    var hc = result[1].Contains("Hardcore");
+                    var hc = result[1].Contains("HC");
                     var priority = result[2].Trim();
                     listDspl.Items.Add(new ListViewItem(new string[] { map, mod, hc.ToString(), priority }));
                 }
             }
 
-            if (File.Exists(_configPath))
+            if (File.Exists(PathProvider.SettingsFilePath))
             {
-                IniReader iniReader = new IniReader(_configPath);
+                IniReader iniReader = new IniReader(PathProvider.SettingsFilePath);
                 cb_map.Text = iniReader.ReadString("Server", "Map", "Aground");
                 cb_mod.Text = iniReader.ReadString("Server", "Mod", "Capture The Flag");
                 cb_hardCore.Text = iniReader.ReadString("Server", "HardCore", "Enable");
@@ -63,7 +60,6 @@ namespace MW3_Server_Maker
         {
             _dspl.Rotations.Clear();
             listDspl.Items.Clear();
-            _dspl.Write();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -84,18 +80,14 @@ namespace MW3_Server_Maker
             _dspl.Add(map, mod, priority);
             listDspl.Items.Add(new ListViewItem(new string[] { selectedMap, selectedMod, (isHardCore).ToString(), selectedPriority }));
             _dspl.Write();
+            save_settings();
         }
 
         private void btn_start_Click(object sender, EventArgs e)
         {
             if (File.Exists("TeknoMW3_Server_Launcher.exe"))
             {
-                IniReader iniReader = new IniReader(_configPath);
-                iniReader.Write("Server", "Map", cb_map.Text);
-                iniReader.Write("Server", "Mod", cb_mod.Text);
-                iniReader.Write("Server", "HardCore", cb_hardCore.Text);
-                iniReader.Write("Server", "Priority", cb_priority.Text);
-                Process.Start("TeknoMW3_Server_Launcher.exe", "start_map_rotate");
+                Process.Start(PathProvider.LauncherFilePath, "-enable_rcon -enable_b3 +start_map_rotate"); //start_map_rotate
                 Application.Exit();
             }
             else
@@ -106,13 +98,22 @@ namespace MW3_Server_Maker
 
         private void btn_options_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            FormSetting form2 = new FormSetting();
             form2.ShowDialog();
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
             MetroMessageBox.Show(this, $"Developer: Soheil Jashnsaz\nGithub: https://github.com/soheil-js\nRepository: https://github.com/soheil-js/MW3-Server-Maker\nVersion: {AppVersion.Get()}", "MW3 Server Maker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void save_settings()
+        {
+            IniReader iniReader = new IniReader(PathProvider.SettingsFilePath);
+            iniReader.Write("Server", "Map", cb_map.Text);
+            iniReader.Write("Server", "Mod", cb_mod.Text);
+            iniReader.Write("Server", "HardCore", cb_hardCore.Text);
+            iniReader.Write("Server", "Priority", cb_priority.Text);
         }
     }
 }

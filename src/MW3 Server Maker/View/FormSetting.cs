@@ -1,27 +1,23 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using MetroFramework;
 using MetroFramework.Forms;
 
 namespace MW3_Server_Maker
 {
-    public partial class Form2 : MetroForm
+    public partial class FormSetting : MetroForm
     {
-        private readonly string serverPath = $"{Environment.CurrentDirectory}\\players2\\server.cfg";
-        private readonly string scriptsPath = $"{Environment.CurrentDirectory}\\scripts.mv";
-        private readonly string commandsPath = $"{Environment.CurrentDirectory}\\commands.mv";
-        private readonly Server server;
+        private readonly Server _server;
 
-        public Form2()
+        public FormSetting()
         {
             InitializeComponent();
-            server = new Server(serverPath);
+            _server = new Server(PathProvider.CfgFilePath);
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void FormSetting_Load(object sender, EventArgs e)
         {
-            server.Read();
+            _server.Read();
             LoadConfig();
             LoadScripts();
             LoadCommands();
@@ -31,6 +27,7 @@ namespace MW3_Server_Maker
         {
             if (chkScripts.Checked)
             {
+                _server.HasScripts = true;
                 txtScript.Enabled = true;
                 listScripts.Enabled = true;
                 btnAddScript.Enabled = true;
@@ -38,6 +35,7 @@ namespace MW3_Server_Maker
             }
             else
             {
+                _server.HasScripts = false;
                 txtScript.Enabled = false;
                 listScripts.Enabled = false;
                 btnAddScript.Enabled = false;
@@ -49,6 +47,7 @@ namespace MW3_Server_Maker
         {
             if (chkCammand.Checked)
             {
+                _server.HasCommands = true;
                 txtCommand.Enabled = true;
                 listCommands.Enabled = true;
                 btnAddCommand.Enabled = true;
@@ -56,6 +55,7 @@ namespace MW3_Server_Maker
             }
             else
             {
+                _server.HasCommands = false;
                 txtCommand.Enabled = false;
                 listCommands.Enabled = false;
                 btnAddCommand.Enabled = false;
@@ -68,8 +68,8 @@ namespace MW3_Server_Maker
             SaveConfig();
             SaveScripts();
             SaveCommands();
-            server.Write();
-            MetroMessageBox.Show(this, "\nConfiguration Saved In \"server.cfg\" File!", "MW3 Server Maker", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _server.Write();
+            Close();
         }
 
         private new void KeyPress(object sender, KeyPressEventArgs e)
@@ -82,6 +82,7 @@ namespace MW3_Server_Maker
         {
             if (!string.IsNullOrEmpty(txtScript.Text))
             {
+                _server.AddScript(txtScript.Text);
                 listScripts.Items.Add(txtScript.Text.Trim());
                 txtScript.Clear();
             }
@@ -89,14 +90,15 @@ namespace MW3_Server_Maker
 
         private void btnClearScript_Click(object sender, EventArgs e)
         {
+            _server.ClearScrips();
             listScripts.Items.Clear();
-            server.ClearScrips();
         }
 
         private void btnAddCommand_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtCommand.Text))
             {
+                _server.AddCommand(txtCommand.Text);
                 listCommands.Items.Add(txtCommand.Text.Trim());
                 txtCommand.Clear();
             }
@@ -104,38 +106,38 @@ namespace MW3_Server_Maker
 
         private void btnCleaerCommand_Click(object sender, EventArgs e)
         {
+            _server.ClearCommands();
             listCommands.Items.Clear();
-            server.ClearCommands();
         }
 
         private void LoadConfig()
         {
-            txtHostName.Text = server.HostName;
-            txtMapRotation.Text = server.MapRotation;
-            txtMaxClients.Text = server.MaxClients;
-            txtServerPassword.Text = server.Password;
-            txtPrivateClients.Text = server.PrivateClients;
-            txtPrivatePassword.Text = server.PrivatePassword;
-            txtRconPassword.Text = server.RconPassword;
-            cboVoice.SelectedIndex = int.Parse(server.Voice);
-            cboAllowVote.SelectedIndex = int.Parse(server.AllowVote);
-            cboDeadChat.SelectedIndex = int.Parse(server.DeadChat);
-            txtInactivity.Text = server.Inactivity;
-            txtKickTime.Text = server.KickBanTime;
-            cboFloodProtect.SelectedIndex = int.Parse(server.FloodProtect);
-            txtMaxPing.Text = server.MaxPing;
-            cboBanByGuid.SelectedIndex = int.Parse(server.BanByGuid);
-            cboBanByIp.SelectedIndex = int.Parse(server.BanByIp);
-            txtClanWebsite.Text = server.ClanWebsite;
-            txtDiscord.Text = server.Discord;
-            txtFullMessage.Text = server.ServerFullMessage;
-            cbServerVisibility.SelectedIndex = int.Parse(server.SpecifyServerVisibility) - 1;
-            txtOpenGamePort.Text = server.OpenGamePort;
-            txtSecureGamePort.Text = server.SecureGamePort;
-            txtAuthPort.Text = server.AuthenticationPort;
-            txtMasterPort.Text = server.MasterServerPort;
+            txtHostName.Text = _server.HostName;
+            txtMapRotation.Text = _server.MapRotation;
+            txtMaxClients.Text = _server.MaxClients;
+            txtServerPassword.Text = _server.Password;
+            txtPrivateClients.Text = _server.PrivateClients;
+            txtPrivatePassword.Text = _server.PrivatePassword;
+            txtRconPassword.Text = _server.RconPassword;
+            cboVoice.SelectedIndex = int.Parse(_server.Voice);
+            cboAllowVote.SelectedIndex = int.Parse(_server.AllowVote);
+            cboDeadChat.SelectedIndex = int.Parse(_server.DeadChat);
+            txtInactivity.Text = _server.Inactivity;
+            txtKickTime.Text = _server.KickBanTime;
+            cboFloodProtect.SelectedIndex = int.Parse(_server.FloodProtect);
+            txtMaxPing.Text = _server.MaxPing;
+            cboBanByGuid.SelectedIndex = int.Parse(_server.BanByGuid);
+            cboBanByIp.SelectedIndex = int.Parse(_server.BanByIp);
+            txtClanWebsite.Text = _server.ClanWebsite;
+            txtDiscord.Text = _server.Discord;
+            txtFullMessage.Text = _server.ServerFullMessage;
+            cbServerVisibility.SelectedIndex = int.Parse(_server.SpecifyServerVisibility) - 1;
+            txtOpenGamePort.Text = _server.OpenGamePort;
+            txtSecureGamePort.Text = _server.SecureGamePort;
+            txtAuthPort.Text = _server.AuthenticationPort;
+            txtMasterPort.Text = _server.MasterServerPort;
 
-            if (File.Exists(scriptsPath))
+            if (_server.HasScripts)
             {
                 chkScripts.Checked = true;
                 chkScripts.CheckState = CheckState.Checked;
@@ -146,7 +148,7 @@ namespace MW3_Server_Maker
                 chkScripts.CheckState = CheckState.Unchecked;
             }
 
-            if (File.Exists(commandsPath))
+            if (_server.HasCommands)
             {
                 chkCammand.Checked = true;
                 chkCammand.CheckState = CheckState.Checked;
@@ -160,43 +162,43 @@ namespace MW3_Server_Maker
 
         private void SaveConfig()
         {
-            server.HostName = txtHostName.Text;
-            server.MapRotation = txtMapRotation.Text;
-            server.MaxClients = txtMaxClients.Text;
-            server.Password = txtServerPassword.Text;
-            server.PrivateClients = txtPrivateClients.Text;
-            server.PrivatePassword = txtPrivatePassword.Text;
-            server.RconPassword = txtRconPassword.Text;
-            server.Voice = cboVoice.SelectedIndex.ToString();
-            server.AllowVote = cboAllowVote.SelectedIndex.ToString();
-            server.DeadChat = cboDeadChat.SelectedIndex.ToString();
-            server.Inactivity = txtInactivity.Text;
-            server.KickBanTime = txtKickTime.Text;
-            server.FloodProtect = cboFloodProtect.SelectedIndex.ToString();
-            server.MaxPing = txtMaxPing.Text;
-            server.BanByGuid = cboBanByGuid.SelectedIndex.ToString();
-            server.BanByIp = cboBanByIp.SelectedIndex.ToString();
-            server.ClanWebsite = txtClanWebsite.Text;
-            server.Discord = txtDiscord.Text;
-            server.ServerFullMessage = txtFullMessage.Text;
-            server.SpecifyServerVisibility = (cbServerVisibility.SelectedIndex + 1).ToString();
-            server.OpenGamePort = txtOpenGamePort.Text;
-            server.SecureGamePort = txtSecureGamePort.Text;
-            server.AuthenticationPort = txtAuthPort.Text;
-            server.MasterServerPort = txtMasterPort.Text;
+            _server.HostName = txtHostName.Text;
+            _server.MapRotation = txtMapRotation.Text;
+            _server.MaxClients = txtMaxClients.Text;
+            _server.Password = txtServerPassword.Text;
+            _server.PrivateClients = txtPrivateClients.Text;
+            _server.PrivatePassword = txtPrivatePassword.Text;
+            _server.RconPassword = txtRconPassword.Text;
+            _server.Voice = cboVoice.SelectedIndex.ToString();
+            _server.AllowVote = cboAllowVote.SelectedIndex.ToString();
+            _server.DeadChat = cboDeadChat.SelectedIndex.ToString();
+            _server.Inactivity = txtInactivity.Text;
+            _server.KickBanTime = txtKickTime.Text;
+            _server.FloodProtect = cboFloodProtect.SelectedIndex.ToString();
+            _server.MaxPing = txtMaxPing.Text;
+            _server.BanByGuid = cboBanByGuid.SelectedIndex.ToString();
+            _server.BanByIp = cboBanByIp.SelectedIndex.ToString();
+            _server.ClanWebsite = txtClanWebsite.Text;
+            _server.Discord = txtDiscord.Text;
+            _server.ServerFullMessage = txtFullMessage.Text;
+            _server.SpecifyServerVisibility = (cbServerVisibility.SelectedIndex + 1).ToString();
+            _server.OpenGamePort = txtOpenGamePort.Text;
+            _server.SecureGamePort = txtSecureGamePort.Text;
+            _server.AuthenticationPort = txtAuthPort.Text;
+            _server.MasterServerPort = txtMasterPort.Text;
         }
 
         private void LoadScripts()
         {
-            if (File.Exists(scriptsPath))
+            if (File.Exists(PathProvider.ScriptsFilePath))
             {
-                string[] scripts = File.ReadAllLines(scriptsPath);
+                string[] scripts = File.ReadAllLines(PathProvider.ScriptsFilePath);
                 foreach (string script in scripts)
                 {
                     if (!string.IsNullOrEmpty(script))
                     {
                         listScripts.Items.Add(script);
-                        server.AddScript(script);
+                        _server.AddScript(script);
                     }
                 }
             }
@@ -206,7 +208,7 @@ namespace MW3_Server_Maker
         {
             if (listScripts.Items.Count > 0)
             {
-                using (StreamWriter sw = new StreamWriter(scriptsPath, false))
+                using (StreamWriter sw = new StreamWriter(PathProvider.ScriptsFilePath, false))
                 {
                     foreach (string script in listScripts.Items)
                     {
@@ -216,21 +218,21 @@ namespace MW3_Server_Maker
             }
             else
             {
-                File.Delete(scriptsPath);
+                File.Delete(PathProvider.ScriptsFilePath);
             }
         }
 
         private void LoadCommands()
         {
-            if (File.Exists(commandsPath))
+            if (File.Exists(PathProvider.CommandsFilePath))
             {
-                string[] commands = File.ReadAllLines(commandsPath);
+                string[] commands = File.ReadAllLines(PathProvider.CommandsFilePath);
                 foreach (string command in commands)
                 {
                     if (!string.IsNullOrEmpty(command))
                     {
                         listCommands.Items.Add(command);
-                        server.AddCommand(command);
+                        _server.AddCommand(command);
                     }
                 }
 
@@ -241,7 +243,7 @@ namespace MW3_Server_Maker
         {
             if (listCommands.Items.Count > 0)
             {
-                using (StreamWriter sw = new StreamWriter(commandsPath, false))
+                using (StreamWriter sw = new StreamWriter(PathProvider.CommandsFilePath, false))
                 {
                     foreach (string command in listCommands.Items)
                     {
@@ -251,7 +253,7 @@ namespace MW3_Server_Maker
             }
             else
             {
-                File.Delete(commandsPath);
+                File.Delete(PathProvider.CommandsFilePath);
             }
         }
     }

@@ -46,6 +46,11 @@ namespace MW3_Server_Maker
         public Server(string path)
         {
             _path = path;
+            SetDefaultValue();
+        }
+
+        public void SetDefaultValue()
+        {
             SpecifyServerVisibility = "1";
             OpenGamePort = "27015";
             SecureGamePort = "27016";
@@ -280,7 +285,7 @@ namespace MW3_Server_Maker
 
             content = content.Replace("<sv_hostname>", HostName.Trim())
                 .Replace("<sv_maprotation>", MapRotation.Trim())
-                .Replace("<sv_fixedMapRotation>", FixedMapRotation)
+                .Replace("<sv_fixedMapRotation>", FixedMapRotation.Trim())
                 .Replace("<sv_maxclients>", MaxClients.Trim())
                 .Replace("<g_password>", Password.Trim())
                 .Replace("<sv_privateClients>", PrivateClients.Trim())
@@ -303,8 +308,8 @@ namespace MW3_Server_Maker
                 .Replace("<net_port>", SecureGamePort.Trim())
                 .Replace("<net_authPort>", AuthenticationPort.Trim())
                 .Replace("<net_masterServerPort>", MasterServerPort.Trim())
-                .Replace("<scr_teambalance>", TeamAutoBalance)
-                .Replace("<g_playerCollision>", PlayerCollision);
+                .Replace("<scr_teambalance>", TeamAutoBalance.Trim())
+                .Replace("<g_playerCollision>", PlayerCollision.Trim());
 
             StringBuilder sb = new StringBuilder();
             using (StringWriter sw = new StringWriter(sb))

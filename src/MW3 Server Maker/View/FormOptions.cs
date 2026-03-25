@@ -23,53 +23,19 @@ namespace MW3_Server_Maker
             LoadCommands();
         }
 
-        private void chk_loader1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkScripts.Checked)
-            {
-                _server.HasScripts = true;
-                txtScript.Enabled = true;
-                listScripts.Enabled = true;
-                btnAddScript.Enabled = true;
-                btnClearScript.Enabled = true;
-            }
-            else
-            {
-                _server.HasScripts = false;
-                txtScript.Enabled = false;
-                listScripts.Enabled = false;
-                btnAddScript.Enabled = false;
-                btnClearScript.Enabled = false;
-            }
-        }
-
-        private void chkCammand_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkCammand.Checked)
-            {
-                _server.HasCommands = true;
-                txtCommand.Enabled = true;
-                listCommands.Enabled = true;
-                btnAddCommand.Enabled = true;
-                btnCleaerCommand.Enabled = true;
-            }
-            else
-            {
-                _server.HasCommands = false;
-                txtCommand.Enabled = false;
-                listCommands.Enabled = false;
-                btnAddCommand.Enabled = false;
-                btnCleaerCommand.Enabled = false;
-            }
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             SaveConfig();
             SaveScripts();
             SaveCommands();
             _server.Write();
             Close();
+        }
+
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+            _server.SetDefaultValue();
+            LoadConfig();
         }
 
         private new void KeyPress(object sender, KeyPressEventArgs e)
@@ -108,6 +74,46 @@ namespace MW3_Server_Maker
         {
             _server.ClearCommands();
             listCommands.Items.Clear();
+        }
+
+        private void chkScripts_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkScripts.Checked)
+            {
+                _server.HasScripts = true;
+                txtScript.Enabled = true;
+                listScripts.Enabled = true;
+                btnAddScript.Enabled = true;
+                btnClearScript.Enabled = true;
+            }
+            else
+            {
+                _server.HasScripts = false;
+                txtScript.Enabled = false;
+                listScripts.Enabled = false;
+                btnAddScript.Enabled = false;
+                btnClearScript.Enabled = false;
+            }
+        }
+
+        private void chkCammand_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCammand.Checked)
+            {
+                _server.HasCommands = true;
+                txtCommand.Enabled = true;
+                listCommands.Enabled = true;
+                btnAddCommand.Enabled = true;
+                btnCleaerCommand.Enabled = true;
+            }
+            else
+            {
+                _server.HasCommands = false;
+                txtCommand.Enabled = false;
+                listCommands.Enabled = false;
+                btnAddCommand.Enabled = false;
+                btnCleaerCommand.Enabled = false;
+            }
         }
 
         private void LoadConfig()

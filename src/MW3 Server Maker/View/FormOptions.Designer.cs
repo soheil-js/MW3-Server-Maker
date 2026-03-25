@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOptions));
             this.chkScripts = new MetroFramework.Controls.MetroCheckBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnSave = new MetroFramework.Controls.MetroButton();
             this.txtHostName = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtSecureGamePort = new MetroFramework.Controls.MetroTextBox();
@@ -94,6 +94,7 @@
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
             this.cboPlayerCollision = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.btnDefault = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // chkScripts
@@ -108,20 +109,20 @@
             this.chkScripts.Text = "Scripts";
             this.chkScripts.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.chkScripts.UseSelectable = true;
-            this.chkScripts.CheckedChanged += new System.EventHandler(this.chk_loader1_CheckedChanged);
+            this.chkScripts.CheckedChanged += new System.EventHandler(this.chkScripts_CheckedChanged);
             // 
-            // metroButton1
+            // btnSave
             // 
-            this.metroButton1.Location = new System.Drawing.Point(31, 803);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(854, 43);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroButton1.TabIndex = 4;
-            this.metroButton1.Text = "Save";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnSave.Location = new System.Drawing.Point(31, 805);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(705, 43);
+            this.btnSave.Style = MetroFramework.MetroColorStyle.Lime;
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save";
+            this.btnSave.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnSave.UseSelectable = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtHostName
             // 
@@ -1328,11 +1329,24 @@
             this.metroLabel27.Text = "Player Collision :";
             this.metroLabel27.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // btnDefault
+            // 
+            this.btnDefault.Location = new System.Drawing.Point(743, 805);
+            this.btnDefault.Name = "btnDefault";
+            this.btnDefault.Size = new System.Drawing.Size(143, 43);
+            this.btnDefault.Style = MetroFramework.MetroColorStyle.Lime;
+            this.btnDefault.TabIndex = 45;
+            this.btnDefault.Text = "Default";
+            this.btnDefault.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnDefault.UseSelectable = true;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
+            // 
             // FormOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 866);
+            this.ClientSize = new System.Drawing.Size(916, 876);
+            this.Controls.Add(this.btnDefault);
             this.Controls.Add(this.cboPlayerCollision);
             this.Controls.Add(this.metroLabel27);
             this.Controls.Add(this.cboTeamAutoBalance);
@@ -1395,7 +1409,7 @@
             this.Controls.Add(this.btnAddScript);
             this.Controls.Add(this.btnCleaerCommand);
             this.Controls.Add(this.btnClearScript);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.chkCammand);
             this.Controls.Add(this.chkScripts);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1416,7 +1430,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroCheckBox chkScripts;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnSave;
         private MetroFramework.Controls.MetroTextBox txtHostName;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox txtSecureGamePort;
@@ -1480,5 +1494,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel26;
         private MetroFramework.Controls.MetroComboBox cboPlayerCollision;
         private MetroFramework.Controls.MetroLabel metroLabel27;
+        private MetroFramework.Controls.MetroButton btnDefault;
     }
 }

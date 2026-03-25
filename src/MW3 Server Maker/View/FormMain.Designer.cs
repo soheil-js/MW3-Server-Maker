@@ -49,6 +49,12 @@
             this.btnAbout = new MetroFramework.Controls.MetroButton();
             this.cb_hardCore = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.chk_enable_slow_motion = new MetroFramework.Controls.MetroCheckBox();
+            this.chk_enable_rcon = new MetroFramework.Controls.MetroCheckBox();
+            this.chk_enable_b3 = new MetroFramework.Controls.MetroCheckBox();
+            this.chk_secure_b3 = new MetroFramework.Controls.MetroCheckBox();
+            this.chk_no_integrity = new MetroFramework.Controls.MetroCheckBox();
+            this.chk_start_map_rotate = new MetroFramework.Controls.MetroCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -168,7 +174,7 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(333, 598);
+            this.btn_clear.Location = new System.Drawing.Point(333, 599);
             this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(143, 43);
@@ -181,7 +187,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(182, 598);
+            this.btn_add.Location = new System.Drawing.Point(182, 599);
             this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(143, 43);
@@ -194,7 +200,7 @@
             // 
             // btn_start
             // 
-            this.btn_start.Location = new System.Drawing.Point(31, 598);
+            this.btn_start.Location = new System.Drawing.Point(31, 599);
             this.btn_start.Margin = new System.Windows.Forms.Padding(4);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(143, 43);
@@ -207,13 +213,13 @@
             // 
             // btn_options
             // 
-            this.btn_options.Location = new System.Drawing.Point(674, 598);
+            this.btn_options.Location = new System.Drawing.Point(674, 599);
             this.btn_options.Margin = new System.Windows.Forms.Padding(4);
             this.btn_options.Name = "btn_options";
             this.btn_options.Size = new System.Drawing.Size(143, 43);
             this.btn_options.Style = MetroFramework.MetroColorStyle.Lime;
             this.btn_options.TabIndex = 15;
-            this.btn_options.Text = "Setting";
+            this.btn_options.Text = "Options";
             this.btn_options.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btn_options.UseSelectable = true;
             this.btn_options.Click += new System.EventHandler(this.btn_options_Click);
@@ -309,7 +315,7 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(825, 598);
+            this.btnAbout.Location = new System.Drawing.Point(825, 599);
             this.btnAbout.Margin = new System.Windows.Forms.Padding(4);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(143, 43);
@@ -348,11 +354,95 @@
             this.metroLabel4.Text = "Hard Core   ";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // chk_enable_slow_motion
+            // 
+            this.chk_enable_slow_motion.AutoSize = true;
+            this.chk_enable_slow_motion.Location = new System.Drawing.Point(32, 663);
+            this.chk_enable_slow_motion.Name = "chk_enable_slow_motion";
+            this.chk_enable_slow_motion.Size = new System.Drawing.Size(140, 17);
+            this.chk_enable_slow_motion.Style = MetroFramework.MetroColorStyle.Lime;
+            this.chk_enable_slow_motion.TabIndex = 23;
+            this.chk_enable_slow_motion.Text = "Enable Slow Motion";
+            this.chk_enable_slow_motion.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chk_enable_slow_motion.UseSelectable = true;
+            // 
+            // chk_enable_rcon
+            // 
+            this.chk_enable_rcon.AutoSize = true;
+            this.chk_enable_rcon.Checked = true;
+            this.chk_enable_rcon.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_enable_rcon.Location = new System.Drawing.Point(218, 663);
+            this.chk_enable_rcon.Name = "chk_enable_rcon";
+            this.chk_enable_rcon.Size = new System.Drawing.Size(96, 17);
+            this.chk_enable_rcon.Style = MetroFramework.MetroColorStyle.Lime;
+            this.chk_enable_rcon.TabIndex = 24;
+            this.chk_enable_rcon.Text = "Enable Rcon";
+            this.chk_enable_rcon.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chk_enable_rcon.UseSelectable = true;
+            // 
+            // chk_enable_b3
+            // 
+            this.chk_enable_b3.AutoSize = true;
+            this.chk_enable_b3.Checked = true;
+            this.chk_enable_b3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_enable_b3.Location = new System.Drawing.Point(353, 663);
+            this.chk_enable_b3.Name = "chk_enable_b3";
+            this.chk_enable_b3.Size = new System.Drawing.Size(81, 17);
+            this.chk_enable_b3.Style = MetroFramework.MetroColorStyle.Lime;
+            this.chk_enable_b3.TabIndex = 25;
+            this.chk_enable_b3.Text = "Enable B3";
+            this.chk_enable_b3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chk_enable_b3.UseSelectable = true;
+            // 
+            // chk_secure_b3
+            // 
+            this.chk_secure_b3.AutoSize = true;
+            this.chk_secure_b3.Location = new System.Drawing.Point(470, 663);
+            this.chk_secure_b3.Name = "chk_secure_b3";
+            this.chk_secure_b3.Size = new System.Drawing.Size(81, 17);
+            this.chk_secure_b3.Style = MetroFramework.MetroColorStyle.Lime;
+            this.chk_secure_b3.TabIndex = 26;
+            this.chk_secure_b3.Text = "Secure B3";
+            this.chk_secure_b3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chk_secure_b3.UseSelectable = true;
+            // 
+            // chk_no_integrity
+            // 
+            this.chk_no_integrity.AutoSize = true;
+            this.chk_no_integrity.Location = new System.Drawing.Point(584, 663);
+            this.chk_no_integrity.Name = "chk_no_integrity";
+            this.chk_no_integrity.Size = new System.Drawing.Size(93, 17);
+            this.chk_no_integrity.Style = MetroFramework.MetroColorStyle.Lime;
+            this.chk_no_integrity.TabIndex = 27;
+            this.chk_no_integrity.Text = "No Integrity";
+            this.chk_no_integrity.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chk_no_integrity.UseSelectable = true;
+            // 
+            // chk_start_map_rotate
+            // 
+            this.chk_start_map_rotate.AutoSize = true;
+            this.chk_start_map_rotate.Checked = true;
+            this.chk_start_map_rotate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_start_map_rotate.Location = new System.Drawing.Point(713, 663);
+            this.chk_start_map_rotate.Name = "chk_start_map_rotate";
+            this.chk_start_map_rotate.Size = new System.Drawing.Size(124, 17);
+            this.chk_start_map_rotate.Style = MetroFramework.MetroColorStyle.Lime;
+            this.chk_start_map_rotate.TabIndex = 28;
+            this.chk_start_map_rotate.Text = "Start Map Rotate";
+            this.chk_start_map_rotate.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.chk_start_map_rotate.UseSelectable = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 670);
+            this.ClientSize = new System.Drawing.Size(999, 708);
+            this.Controls.Add(this.chk_start_map_rotate);
+            this.Controls.Add(this.chk_no_integrity);
+            this.Controls.Add(this.chk_secure_b3);
+            this.Controls.Add(this.chk_enable_b3);
+            this.Controls.Add(this.chk_enable_rcon);
+            this.Controls.Add(this.chk_enable_slow_motion);
             this.Controls.Add(this.cb_hardCore);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.btnAbout);
@@ -407,6 +497,12 @@
         private MetroFramework.Controls.MetroComboBox cb_hardCore;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private MetroFramework.Controls.MetroCheckBox chk_enable_slow_motion;
+        private MetroFramework.Controls.MetroCheckBox chk_enable_rcon;
+        private MetroFramework.Controls.MetroCheckBox chk_enable_b3;
+        private MetroFramework.Controls.MetroCheckBox chk_secure_b3;
+        private MetroFramework.Controls.MetroCheckBox chk_no_integrity;
+        private MetroFramework.Controls.MetroCheckBox chk_start_map_rotate;
     }
 }
 

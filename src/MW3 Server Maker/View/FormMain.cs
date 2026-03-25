@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using System.Text;
+using System.Collections.Generic;
 
 namespace MW3_Server_Maker
 {
@@ -87,7 +89,21 @@ namespace MW3_Server_Maker
         {
             if (File.Exists("TeknoMW3_Server_Launcher.exe"))
             {
-                Process.Start(PathProvider.LauncherFilePath, "-enable_rcon -enable_b3 +start_map_rotate"); //start_map_rotate
+                List<string> args = new List<string>();
+                if (chk_enable_slow_motion.Checked)
+                    args.Add("-enable_slow_motion");
+                if (chk_enable_rcon.Checked)
+                    args.Add("-enable_rcon");
+                if (chk_enable_b3.Checked)
+                    args.Add("-enable_b3");
+                if (chk_secure_b3.Checked)
+                    args.Add("-secure_b3");
+                if (chk_no_integrity.Checked)
+                    args.Add("-no_integrity");
+                if (chk_start_map_rotate.Checked)
+                    args.Add("+start_map_rotate");
+
+                Process.Start(PathProvider.LauncherFilePath, string.Join(" ", args));
                 Application.Exit();
             }
             else
@@ -98,7 +114,7 @@ namespace MW3_Server_Maker
 
         private void btn_options_Click(object sender, EventArgs e)
         {
-            FormSetting form2 = new FormSetting();
+            FormOptions form2 = new FormOptions();
             form2.ShowDialog();
         }
 

@@ -5,11 +5,11 @@ using MetroFramework.Forms;
 
 namespace MW3_Server_Maker
 {
-    public partial class FormSetting : MetroForm
+    public partial class FormOptions : MetroForm
     {
         private readonly Server _server;
 
-        public FormSetting()
+        public FormOptions()
         {
             InitializeComponent();
             _server = new Server(PathProvider.CfgFilePath);
@@ -112,8 +112,15 @@ namespace MW3_Server_Maker
 
         private void LoadConfig()
         {
+
+            cbServerVisibility.SelectedIndex = int.Parse(_server.SpecifyServerVisibility) - 1;
+            txtOpenGamePort.Text = _server.OpenGamePort;
+            txtSecureGamePort.Text = _server.SecureGamePort;
+            txtAuthPort.Text = _server.AuthenticationPort;
+            txtMasterPort.Text = _server.MasterServerPort;
             txtHostName.Text = _server.HostName;
             txtMapRotation.Text = _server.MapRotation;
+            cboFixedMapRotation.SelectedIndex = int.Parse(_server.FixedMapRotation);
             txtMaxClients.Text = _server.MaxClients;
             txtServerPassword.Text = _server.Password;
             txtPrivateClients.Text = _server.PrivateClients;
@@ -128,14 +135,11 @@ namespace MW3_Server_Maker
             txtMaxPing.Text = _server.MaxPing;
             cboBanByGuid.SelectedIndex = int.Parse(_server.BanByGuid);
             cboBanByIp.SelectedIndex = int.Parse(_server.BanByIp);
+            cboTeamAutoBalance.SelectedIndex = int.Parse(_server.TeamAutoBalance);
+            cboPlayerCollision.SelectedIndex = int.Parse(_server.PlayerCollision);
             txtClanWebsite.Text = _server.ClanWebsite;
             txtDiscord.Text = _server.Discord;
             txtFullMessage.Text = _server.ServerFullMessage;
-            cbServerVisibility.SelectedIndex = int.Parse(_server.SpecifyServerVisibility) - 1;
-            txtOpenGamePort.Text = _server.OpenGamePort;
-            txtSecureGamePort.Text = _server.SecureGamePort;
-            txtAuthPort.Text = _server.AuthenticationPort;
-            txtMasterPort.Text = _server.MasterServerPort;
 
             if (_server.HasScripts)
             {
@@ -162,8 +166,14 @@ namespace MW3_Server_Maker
 
         private void SaveConfig()
         {
+            _server.SpecifyServerVisibility = (cbServerVisibility.SelectedIndex + 1).ToString();
+            _server.OpenGamePort = txtOpenGamePort.Text;
+            _server.SecureGamePort = txtSecureGamePort.Text;
+            _server.AuthenticationPort = txtAuthPort.Text;
+            _server.MasterServerPort = txtMasterPort.Text;
             _server.HostName = txtHostName.Text;
             _server.MapRotation = txtMapRotation.Text;
+            _server.FixedMapRotation = cboPlayerCollision.SelectedIndex.ToString();
             _server.MaxClients = txtMaxClients.Text;
             _server.Password = txtServerPassword.Text;
             _server.PrivateClients = txtPrivateClients.Text;
@@ -181,11 +191,8 @@ namespace MW3_Server_Maker
             _server.ClanWebsite = txtClanWebsite.Text;
             _server.Discord = txtDiscord.Text;
             _server.ServerFullMessage = txtFullMessage.Text;
-            _server.SpecifyServerVisibility = (cbServerVisibility.SelectedIndex + 1).ToString();
-            _server.OpenGamePort = txtOpenGamePort.Text;
-            _server.SecureGamePort = txtSecureGamePort.Text;
-            _server.AuthenticationPort = txtAuthPort.Text;
-            _server.MasterServerPort = txtMasterPort.Text;
+            _server.TeamAutoBalance = cboTeamAutoBalance.SelectedIndex.ToString();
+            _server.PlayerCollision = cboPlayerCollision.SelectedIndex.ToString();
         }
 
         private void LoadScripts()

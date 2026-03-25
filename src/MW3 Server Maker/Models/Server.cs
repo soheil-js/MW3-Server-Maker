@@ -14,10 +14,15 @@ namespace MW3_Server_Maker
 
         public bool HasScripts { get; set; }
         public bool HasCommands { get; set; }
-        
 
+        public string SpecifyServerVisibility { get; set; }
+        public string OpenGamePort { get; set; }
+        public string SecureGamePort { get; set; }
+        public string AuthenticationPort { get; set; }
+        public string MasterServerPort { get; set; }
         public string HostName { get; set; }
         public string MapRotation { get; set; }
+        public string FixedMapRotation { get; set; }
         public string MaxClients { get; set; }
         public string Password { get; set; }
         public string PrivateClients { get; set; }
@@ -35,22 +40,25 @@ namespace MW3_Server_Maker
         public string ServerFullMessage { get; set; }
         public string BanByGuid { get; set; }
         public string BanByIp { get; set; }
-        public string SpecifyServerVisibility { get; set; }
-        public string OpenGamePort { get; set; }
-        public string SecureGamePort { get; set; }
-        public string AuthenticationPort { get; set; }
-        public string MasterServerPort { get; set; }
+        public string TeamAutoBalance { get; set; }
+        public string PlayerCollision { get; set; }
 
         public Server(string path)
         {
             _path = path;
+            SpecifyServerVisibility = "1";
+            OpenGamePort = "27015";
+            SecureGamePort = "27016";
+            AuthenticationPort = "8766";
+            MasterServerPort = "27017";
             HostName = "MVSoft";
-            MapRotation = "default";
+            MapRotation = "Default";
+            FixedMapRotation = "0";
             MaxClients = "18";
             Password = "";
             PrivateClients = "";
             PrivatePassword = "";
-            RconPassword = "";
+            RconPassword = "1234";
             Voice = "2";
             AllowVote = "0";
             DeadChat = "0";
@@ -63,11 +71,8 @@ namespace MW3_Server_Maker
             ServerFullMessage = "The server is full. Come back later.";
             BanByGuid = "0";
             BanByIp = "0";
-            SpecifyServerVisibility = "1";
-            OpenGamePort = "27015";
-            SecureGamePort = "27016";
-            AuthenticationPort = "8766";
-            MasterServerPort = "27017";
+            TeamAutoBalance = "0";
+            PlayerCollision = "1";
         }
 
         public void AddScript(string name)
@@ -112,6 +117,12 @@ namespace MW3_Server_Maker
                             var result = Regex.Match(line, "seta sv_maprotation \"(.*?)\"");
                             if (result.Success)
                                 MapRotation = result.Groups[1].Value;
+                        }
+                        else if (line.Contains("sv_fixedMapRotation"))
+                        {
+                            var result = Regex.Match(line, "seta sv_fixedMapRotation \"(.*?)\"");
+                            if (result.Success)
+                                FixedMapRotation = result.Groups[1].Value;
                         }
                         else if (line.Contains("sv_maxclients"))
                         {
@@ -215,6 +226,18 @@ namespace MW3_Server_Maker
                             if (result.Success)
                                 BanByIp = result.Groups[1].Value;
                         }
+                        else if (line.Contains("scr_teambalance"))
+                        {
+                            var result = Regex.Match(line, "seta scr_teambalance \"(.*?)\"");
+                            if (result.Success)
+                                TeamAutoBalance = result.Groups[1].Value;
+                        }
+                        else if (line.Contains("g_playerCollision"))
+                        {
+                            var result = Regex.Match(line, "seta g_playerCollision \"(.*?)\"");
+                            if (result.Success)
+                                PlayerCollision = result.Groups[1].Value;
+                        }
                         else if (line.Contains("dedicated"))
                         {
                             var result = Regex.Match(line, "seta dedicated \"(.*?)\"");
@@ -257,6 +280,7 @@ namespace MW3_Server_Maker
 
             content = content.Replace("<sv_hostname>", HostName.Trim())
                 .Replace("<sv_maprotation>", MapRotation.Trim())
+                .Replace("<sv_fixedMapRotation>", FixedMapRotation)
                 .Replace("<sv_maxclients>", MaxClients.Trim())
                 .Replace("<g_password>", Password.Trim())
                 .Replace("<sv_privateClients>", PrivateClients.Trim())
@@ -278,7 +302,9 @@ namespace MW3_Server_Maker
                 .Replace("<net_queryPort>", OpenGamePort.Trim())
                 .Replace("<net_port>", SecureGamePort.Trim())
                 .Replace("<net_authPort>", AuthenticationPort.Trim())
-                .Replace("<net_masterServerPort>", MasterServerPort.Trim());
+                .Replace("<net_masterServerPort>", MasterServerPort.Trim())
+                .Replace("<scr_teambalance>", TeamAutoBalance)
+                .Replace("<g_playerCollision>", PlayerCollision);
 
             StringBuilder sb = new StringBuilder();
             using (StringWriter sw = new StringWriter(sb))

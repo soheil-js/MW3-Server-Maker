@@ -86,7 +86,7 @@
             "Kill Confirmed",
             "One In The Chamber",
             "Sabotage",
-            "Search And Destory",
+            "Search And Destroy",
             "Team Defender",
             "Team Deathmatch",
             "Team Juggernaut"});

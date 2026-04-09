@@ -32,7 +32,7 @@ namespace MW3_Server_Maker
         public string AllowVote { get; set; }
         public string DeadChat { get; set; }
         public string Inactivity { get; set; }
-        public string KickBanTime { get; set; }
+        public string TempBanTime { get; set; }
         public string FloodProtect { get; set; }
         public string MaxPing { get; set; }
         public string ClanWebsite { get; set; }
@@ -68,7 +68,7 @@ namespace MW3_Server_Maker
             AllowVote = "0";
             DeadChat = "0";
             Inactivity = "0";
-            KickBanTime = "0";
+            TempBanTime = "3600";
             FloodProtect = "1";
             MaxPing = "500";
             ClanWebsite = "https://github.com/soheil-js";
@@ -187,7 +187,7 @@ namespace MW3_Server_Maker
                         {
                             var result = Regex.Match(line, "seta sv_kickBanTime \"(.*?)\"");
                             if (result.Success)
-                                KickBanTime = result.Groups[1].Value;
+                                TempBanTime = result.Groups[1].Value;
                         }
                         else if (line.Contains("sv_floodProtect"))
                         {
@@ -295,7 +295,7 @@ namespace MW3_Server_Maker
                 .Replace("<g_allowVote>", AllowVote.Trim())
                 .Replace("<g_deadChat>", DeadChat.Trim())
                 .Replace("<g_inactivity>", Inactivity.Trim())
-                .Replace("<sv_kickBanTime>", KickBanTime.Trim())
+                .Replace("<sv_kickBanTime>", TempBanTime.Trim())
                 .Replace("<sv_floodProtect>", FloodProtect.Trim())
                 .Replace("<sv_maxping>", MaxPing.Trim())
                 .Replace("<sv_clanWebsite>", ClanWebsite.Trim())

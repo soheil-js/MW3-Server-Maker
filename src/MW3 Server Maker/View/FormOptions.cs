@@ -136,7 +136,7 @@ namespace MW3_Server_Maker
             cboAllowVote.SelectedIndex = int.Parse(_server.AllowVote);
             cboDeadChat.SelectedIndex = int.Parse(_server.DeadChat);
             txtInactivity.Text = _server.Inactivity;
-            txtKickTime.Text = _server.KickBanTime;
+            txtTempBanTime.Text = _server.TempBanTime;
             cboFloodProtect.SelectedIndex = int.Parse(_server.FloodProtect);
             txtMaxPing.Text = _server.MaxPing;
             cboBanByGuid.SelectedIndex = int.Parse(_server.BanByGuid);
@@ -189,7 +189,7 @@ namespace MW3_Server_Maker
             _server.AllowVote = cboAllowVote.SelectedIndex.ToString();
             _server.DeadChat = cboDeadChat.SelectedIndex.ToString();
             _server.Inactivity = txtInactivity.Text;
-            _server.KickBanTime = txtKickTime.Text;
+            _server.TempBanTime = txtTempBanTime.Text;
             _server.FloodProtect = cboFloodProtect.SelectedIndex.ToString();
             _server.MaxPing = txtMaxPing.Text;
             _server.BanByGuid = cboBanByGuid.SelectedIndex.ToString();

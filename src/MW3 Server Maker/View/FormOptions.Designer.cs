@@ -58,7 +58,7 @@
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.txtInactivity = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.txtKickTime = new MetroFramework.Controls.MetroTextBox();
+            this.txtTempBanTime = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.btnClearScript = new MetroFramework.Controls.MetroButton();
             this.btnAddScript = new MetroFramework.Controls.MetroButton();
@@ -689,39 +689,39 @@
             this.metroLabel15.Text = "Inactivity :";
             this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // txtKickTime
+            // txtTempBanTime
             // 
             // 
             // 
             // 
-            this.txtKickTime.CustomButton.Image = null;
-            this.txtKickTime.CustomButton.Location = new System.Drawing.Point(72, 2);
-            this.txtKickTime.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtKickTime.CustomButton.Name = "";
-            this.txtKickTime.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtKickTime.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtKickTime.CustomButton.TabIndex = 1;
-            this.txtKickTime.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtKickTime.CustomButton.UseSelectable = true;
-            this.txtKickTime.CustomButton.Visible = false;
-            this.txtKickTime.Lines = new string[0];
-            this.txtKickTime.Location = new System.Drawing.Point(785, 185);
-            this.txtKickTime.Margin = new System.Windows.Forms.Padding(4);
-            this.txtKickTime.MaxLength = 32767;
-            this.txtKickTime.Name = "txtKickTime";
-            this.txtKickTime.PasswordChar = '\0';
-            this.txtKickTime.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtKickTime.SelectedText = "";
-            this.txtKickTime.SelectionLength = 0;
-            this.txtKickTime.SelectionStart = 0;
-            this.txtKickTime.ShortcutsEnabled = true;
-            this.txtKickTime.Size = new System.Drawing.Size(100, 30);
-            this.txtKickTime.Style = MetroFramework.MetroColorStyle.Lime;
-            this.txtKickTime.TabIndex = 5;
-            this.txtKickTime.UseSelectable = true;
-            this.txtKickTime.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtKickTime.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtKickTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            this.txtTempBanTime.CustomButton.Image = null;
+            this.txtTempBanTime.CustomButton.Location = new System.Drawing.Point(72, 2);
+            this.txtTempBanTime.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTempBanTime.CustomButton.Name = "";
+            this.txtTempBanTime.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtTempBanTime.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTempBanTime.CustomButton.TabIndex = 1;
+            this.txtTempBanTime.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTempBanTime.CustomButton.UseSelectable = true;
+            this.txtTempBanTime.CustomButton.Visible = false;
+            this.txtTempBanTime.Lines = new string[0];
+            this.txtTempBanTime.Location = new System.Drawing.Point(785, 185);
+            this.txtTempBanTime.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTempBanTime.MaxLength = 32767;
+            this.txtTempBanTime.Name = "txtTempBanTime";
+            this.txtTempBanTime.PasswordChar = '\0';
+            this.txtTempBanTime.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTempBanTime.SelectedText = "";
+            this.txtTempBanTime.SelectionLength = 0;
+            this.txtTempBanTime.SelectionStart = 0;
+            this.txtTempBanTime.ShortcutsEnabled = true;
+            this.txtTempBanTime.Size = new System.Drawing.Size(100, 30);
+            this.txtTempBanTime.Style = MetroFramework.MetroColorStyle.Lime;
+            this.txtTempBanTime.TabIndex = 5;
+            this.txtTempBanTime.UseSelectable = true;
+            this.txtTempBanTime.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTempBanTime.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTempBanTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // metroLabel16
             // 
@@ -729,10 +729,10 @@
             this.metroLabel16.Location = new System.Drawing.Point(598, 188);
             this.metroLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(76, 20);
+            this.metroLabel16.Size = new System.Drawing.Size(112, 20);
             this.metroLabel16.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroLabel16.TabIndex = 6;
-            this.metroLabel16.Text = "Kick Time :";
+            this.metroLabel16.Text = "Temp Ban Time :";
             this.metroLabel16.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // btnClearScript
@@ -1390,7 +1390,7 @@
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.txtKickTime);
+            this.Controls.Add(this.txtTempBanTime);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.txtInactivity);
             this.Controls.Add(this.metroLabel2);
@@ -1458,7 +1458,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroTextBox txtInactivity;
         private MetroFramework.Controls.MetroLabel metroLabel15;
-        private MetroFramework.Controls.MetroTextBox txtKickTime;
+        private MetroFramework.Controls.MetroTextBox txtTempBanTime;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroButton btnClearScript;
         private MetroFramework.Controls.MetroButton btnAddScript;

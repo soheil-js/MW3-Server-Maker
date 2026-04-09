@@ -2,20 +2,21 @@
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using MetroFramework;
 using MetroFramework.Forms;
-using System.Text;
-using System.Collections.Generic;
 
 namespace MW3_Server_Maker
 {
     public partial class FormMain : MetroForm
     {
+        private readonly IniReader _iniReader;
         private readonly Default _dspl;
 
         public FormMain()
         {
             InitializeComponent();
+            _iniReader = new IniReader(PathProvider.SettingsFilePath);
             _dspl = new Default(PathProvider.DsplFilePath);
         }
 
@@ -37,11 +38,10 @@ namespace MW3_Server_Maker
 
             if (File.Exists(PathProvider.SettingsFilePath))
             {
-                IniReader iniReader = new IniReader(PathProvider.SettingsFilePath);
-                cb_map.Text = iniReader.ReadString("Server", "Map", "Aground");
-                cb_mod.Text = iniReader.ReadString("Server", "Mod", "Capture The Flag");
-                cb_hardCore.Text = iniReader.ReadString("Server", "HardCore", "Enable");
-                cb_priority.Text = iniReader.ReadString("Server", "Priority", "1");
+                cb_map.Text = _iniReader.ReadString("Server", "Map", "Aground");
+                cb_mod.Text = _iniReader.ReadString("Server", "Mod", "Capture The Flag");
+                cb_hardCore.Text = _iniReader.ReadString("Server", "HardCore", "Enable");
+                cb_priority.Text = _iniReader.ReadString("Server", "Priority", "1");
             }
             else
             {
@@ -125,11 +125,10 @@ namespace MW3_Server_Maker
 
         private void save_settings()
         {
-            IniReader iniReader = new IniReader(PathProvider.SettingsFilePath);
-            iniReader.Write("Server", "Map", cb_map.Text);
-            iniReader.Write("Server", "Mod", cb_mod.Text);
-            iniReader.Write("Server", "HardCore", cb_hardCore.Text);
-            iniReader.Write("Server", "Priority", cb_priority.Text);
+            _iniReader.Write("Server", "Map", cb_map.Text);
+            _iniReader.Write("Server", "Mod", cb_mod.Text);
+            _iniReader.Write("Server", "HardCore", cb_hardCore.Text);
+            _iniReader.Write("Server", "Priority", cb_priority.Text);
         }
     }
 }

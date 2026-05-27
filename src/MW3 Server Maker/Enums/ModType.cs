@@ -2,20 +2,24 @@
 {
     internal enum ModType
     {
-        TeamDeathmatch,
-        Domination,
-        CaptureTheFlag,
-        DropZone,
+        //Standard
         FreeForAll,
-        GunGame,
-        Headquarters,
-        Infected,
-        Juggernaut,
-        KillConfirmed,
-        OneInTheChamber,
-        Sabotage,
+        TeamDeathmatch,
         SearchAndDestroy,
+        Sabotage,
+        Domination,
+        Headquarters,
+        CaptureTheFlag,
+        Demolition,
+        KillConfirmed,
         TeamDefender,
-        TeamJuggernaut
+
+        //Alternative
+        DropZone,
+        TeamJuggernaut,
+        Juggernaut,
+        GunGame,
+        Infected,
+        OneInTheChamber
     }
 }

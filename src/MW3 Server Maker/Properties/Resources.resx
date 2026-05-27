@@ -196,7 +196,7 @@
   <data name="Resistance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Resistance.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Roughneck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="OffShore" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Roughneck.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sanctuary" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -208,7 +208,7 @@
   <data name="Server" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Server.cfg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Shipbreaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Decommission" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shipbreaker.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Terminal" type="System.Resources.ResXFileRef, System.Windows.Forms">

@@ -71,13 +71,13 @@ namespace MW3_Server_Maker
             bool isHardCore = cb_hardCore.SelectedIndex == 0;
             string selectedPriority = cb_priority.SelectedItem.ToString();
 
-            var mapType = Utils.Map(cb_map.SelectedItem.ToString());
+            var mapType = Utils.Map(selectedMap);
             var map = Utils.Map(mapType);
 
-            var modType = Utils.Mod(cb_mod.SelectedItem.ToString());
+            var modType = Utils.Mod(selectedMod);
             var mod = Utils.Mod(modType, isHardCore);
 
-            var priority = Utils.Priority(cb_priority.SelectedItem.ToString());
+            var priority = Utils.Priority(selectedPriority);
 
             _dspl.Add(map, mod, priority);
             listDspl.Items.Add(new ListViewItem(new string[] { selectedMap, selectedMod, (isHardCore).ToString(), selectedPriority }));

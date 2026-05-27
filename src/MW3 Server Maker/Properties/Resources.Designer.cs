@@ -19,7 +19,7 @@ namespace MW3_Server_Maker.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -116,6 +116,16 @@ namespace MW3_Server_Maker.Properties {
         internal static System.Drawing.Bitmap Carbon {
             get {
                 object obj = ResourceManager.GetObject("Carbon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Decommission {
+            get {
+                object obj = ResourceManager.GetObject("Decommission", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +283,16 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OffShore {
+            get {
+                object obj = ResourceManager.GetObject("OffShore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Outpost {
             get {
                 object obj = ResourceManager.GetObject("Outpost", resourceCulture);
@@ -323,16 +343,6 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Roughneck {
-            get {
-                object obj = ResourceManager.GetObject("Roughneck", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Sanctuary {
             get {
                 object obj = ResourceManager.GetObject("Sanctuary", resourceCulture);
@@ -357,16 +367,6 @@ namespace MW3_Server_Maker.Properties {
             get {
                 object obj = ResourceManager.GetObject("Server", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Shipbreaker {
-            get {
-                object obj = ResourceManager.GetObject("Shipbreaker", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

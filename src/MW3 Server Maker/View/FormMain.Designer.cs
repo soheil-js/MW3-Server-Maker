@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cb_mod = new MetroFramework.Controls.MetroComboBox();
             this.cb_map = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -40,7 +39,6 @@
             this.btn_options = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.cb_priority = new MetroFramework.Controls.MetroComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.listDspl = new MetroFramework.Controls.MetroListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,41 +53,33 @@
             this.chk_secure_b3 = new MetroFramework.Controls.MetroCheckBox();
             this.chk_no_integrity = new MetroFramework.Controls.MetroCheckBox();
             this.chk_start_map_rotate = new MetroFramework.Controls.MetroCheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MW3_Server_Maker.Properties.Resources.Aground;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 287);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(444, 249);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // cb_mod
             // 
             this.cb_mod.FormattingEnabled = true;
             this.cb_mod.ItemHeight = 24;
             this.cb_mod.Items.AddRange(new object[] {
-            "Capture The Flag",
-            "Domination",
-            "Drop Zone",
             "Free For All",
-            "Gun Game",
-            "Headquarters",
-            "Infected",
-            "Juggernaut",
-            "Kill Confirmed",
-            "One In The Chamber",
-            "Sabotage",
-            "Search And Destroy",
-            "Team Defender",
             "Team Deathmatch",
-            "Team Juggernaut"});
+            "Search And Destroy",
+            "Sabotage",
+            "Domination",
+            "Headquarters",
+            "Capture The Flag",
+            "Demolition",
+            "Kill Confirmed",
+            "Team Defender",
+            "Drop Zone",
+            "Team Juggernaut",
+            "Juggernaut",
+            "Gun Game",
+            "Infected",
+            "One In The Chamber"});
             this.cb_mod.Location = new System.Drawing.Point(335, 544);
             this.cb_mod.Margin = new System.Windows.Forms.Padding(4);
             this.cb_mod.Name = "cb_mod";
@@ -104,39 +94,41 @@
             this.cb_map.FormattingEnabled = true;
             this.cb_map.ItemHeight = 24;
             this.cb_map.Items.AddRange(new object[] {
-            "Aground",
-            "Arkaden",
-            "Lockdown",
-            "Bootleg",
-            "Mission",
-            "Carbon",
+            "Seatown",
             "Dome",
-            "Downturn",
-            "Hardhat",
-            "Interchange",
-            "Fallen",
+            "Arkaden",
             "Bakaara",
             "Resistance",
-            "Outpost",
-            "Seatown",
-            "Underground",
+            "Downturn",
+            "Bootleg",
+            "Carbon",
+            "Hardhat",
+            "Lockdown",
             "Village",
-            "U-Turn",
-            "Foundation",
-            "Erosion",
-            "Intersection",
-            "Getaway",
+            "Fallen",
+            "Outpost",
+            "Interchange",
+            "Underground",
+            "Mission",
             "Piazza",
-            "Sanctuary",
-            "Black Box",
-            "Parish",
-            "Overwatch",
             "Liberation",
+            "Overwatch",
+            "Black Box",
+            "Sanctuary",
+            "Foundation",
             "Oasis",
-            "Lookout",
-            "Roughneck",
-            "Shipbreaker",
+            "Erosion",
+            "Aground",
+            "U-Turn",
             "Vortex",
+            "Intersection",
+            "Boardwalk",
+            "Decommission",
+            "Gulch",
+            "Off Shore",
+            "Parish",
+            "Lookout",
+            "Getaway",
             "Terminal"});
             this.cb_map.Location = new System.Drawing.Point(79, 544);
             this.cb_map.Margin = new System.Windows.Forms.Padding(4);
@@ -260,17 +252,6 @@
             this.cb_priority.TabIndex = 17;
             this.cb_priority.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cb_priority.UseSelectable = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 78);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(937, 202);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
             // 
             // listDspl
             // 
@@ -432,6 +413,28 @@
             this.chk_start_map_rotate.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.chk_start_map_rotate.UseSelectable = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(31, 78);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(937, 202);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MW3_Server_Maker.Properties.Resources.Aground;
+            this.pictureBox1.Location = new System.Drawing.Point(31, 287);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(444, 249);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -469,8 +472,8 @@
             this.Text = "MW3 Server Maker";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.FormMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

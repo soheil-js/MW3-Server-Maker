@@ -1,9 +1,7 @@
-![MW3 Server Maker](images/mw3servermaker.png)
-
-![Setting](images/mw3servermakersetting.png)
-
 # :pushpin:MW3 Server Maker
 TeknoMW3 **`default.dspl`** and **`server.cfg`** editor
+
+![MW3 Server Maker](img/demo.webp)
 
 # :world_map:Maps
 * Aground

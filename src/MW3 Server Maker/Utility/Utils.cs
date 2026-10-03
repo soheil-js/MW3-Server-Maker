@@ -412,89 +412,89 @@ namespace MW3_Server_Maker
         {
             //Standard Maps
             if (map == MapType.Seatown)
-                return Properties.Resources.Seatown;
+                return Properties.Resources.seatown;
             else if (map == MapType.Dome)
-                return Properties.Resources.Dome;
+                return Properties.Resources.dome;
             else if (map == MapType.Arkaden)
-                return Properties.Resources.Arkaden;
+                return Properties.Resources.arkaden;
             else if (map == MapType.Bakaara)
-                return Properties.Resources.Bakaara;
+                return Properties.Resources.bakaara;
             else if (map == MapType.Resistance)
-                return Properties.Resources.Resistance;
+                return Properties.Resources.resistance;
             else if (map == MapType.Downturn)
-                return Properties.Resources.Downturn;
+                return Properties.Resources.downturn;
             else if (map == MapType.Bootleg)
-                return Properties.Resources.Bootleg;
+                return Properties.Resources.bootleg;
             else if (map == MapType.Carbon)
-                return Properties.Resources.Carbon;
+                return Properties.Resources.carbon;
             else if (map == MapType.Hardhat)
-                return Properties.Resources.Hardhat;
+                return Properties.Resources.hardhat;
             else if (map == MapType.Lockdown)
-                return Properties.Resources.Lockdown;
+                return Properties.Resources.lockdown;
             else if (map == MapType.Village)
-                return Properties.Resources.Village;
+                return Properties.Resources.village;
             else if (map == MapType.Fallen)
-                return Properties.Resources.Fallen;
+                return Properties.Resources.fallen;
             else if (map == MapType.Outpost)
-                return Properties.Resources.Outpost;
+                return Properties.Resources.outpost;
             else if (map == MapType.Interchange)
-                return Properties.Resources.Interchange;
+                return Properties.Resources.interchange;
             else if (map == MapType.Underground)
-                return Properties.Resources.Underground;
+                return Properties.Resources.underground;
             else if (map == MapType.Mission)
-                return Properties.Resources.Mission;
+                return Properties.Resources.mission;
 
             //[DLC 1] Collection 1
             else if (map == MapType.Piazza)
-                return Properties.Resources.Piazza;
+                return Properties.Resources.piazza;
             else if (map == MapType.Liberation)
-                return Properties.Resources.Liberation;
+                return Properties.Resources.liberation;
             else if (map == MapType.Overwatch)
-                return Properties.Resources.Overwatch;
+                return Properties.Resources.overwatch;
             else if (map == MapType.BlackBox)
-                return Properties.Resources.Black_Box;
+                return Properties.Resources.black_box;
 
             //[DLC 2] Collection 2
             else if (map == MapType.Sanctuary)
-                return Properties.Resources.Sanctuary;
+                return Properties.Resources.sanctuary;
             else if (map == MapType.Foundation)
-                return Properties.Resources.Foundation;
+                return Properties.Resources.foundation;
             else if (map == MapType.Oasis)
-                return Properties.Resources.Oasis;
+                return Properties.Resources.oasis;
             else if (map == MapType.Erosion)
-                return Properties.Resources.Erosion;
+                return Properties.Resources.erosion;
             else if (map == MapType.Aground)
-                return Properties.Resources.Aground;
+                return Properties.Resources.aground;
 
             //[DLC 3] Collection 3: Chaos Pack
             else if (map == MapType.UTurn)
-                return Properties.Resources.UTurn;
+                return Properties.Resources.u_turn;
             else if (map == MapType.Vortex)
-                return Properties.Resources.Vortex;
+                return Properties.Resources.vortex;
             else if (map == MapType.Intersection)
-                return Properties.Resources.Intersection;
+                return Properties.Resources.intersection;
 
             //[DLC 4] Collection 4: Final Assault
-            //else if (map == MapType.Boardwalk)
-            //    return Bitmap.FromFile("");
+            else if (map == MapType.Boardwalk)
+                return Properties.Resources.boardwalk;
             else if (map == MapType.Decommission)
-                return Properties.Resources.Decommission;
-            //else if (map == MapType.Gulch)
-            //    return Bitmap.FromFile("");
+                return Properties.Resources.decommission;
+            else if (map == MapType.Gulch)
+                return Properties.Resources.gulch;
             else if (map == MapType.OffShore)
-                return Properties.Resources.OffShore;
+                return Properties.Resources.off_shore;
             else if (map == MapType.Parish)
-                return Properties.Resources.Parish;
+                return Properties.Resources.parish;
 
             //Face Off
             else if (map == MapType.Lookout)
-                return Properties.Resources.Lookout;
+                return Properties.Resources.lookout;
             else if (map == MapType.Getaway)
-                return Properties.Resources.Getaway;
+                return Properties.Resources.getaway;
 
             //Free
             else //if (map == MapType.Terminal)
-                return Properties.Resources.Terminal;
+                return Properties.Resources.terminal;
         }
 
         #endregion

@@ -63,9 +63,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aground {
+        internal static System.Drawing.Bitmap aground {
             get {
-                object obj = ResourceManager.GetObject("Aground", resourceCulture);
+                object obj = ResourceManager.GetObject("aground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Arkaden {
+        internal static System.Drawing.Bitmap arkaden {
             get {
-                object obj = ResourceManager.GetObject("Arkaden", resourceCulture);
+                object obj = ResourceManager.GetObject("arkaden", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bakaara {
+        internal static System.Drawing.Bitmap bakaara {
             get {
-                object obj = ResourceManager.GetObject("Bakaara", resourceCulture);
+                object obj = ResourceManager.GetObject("bakaara", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Black_Box {
+        internal static System.Drawing.Bitmap black_box {
             get {
-                object obj = ResourceManager.GetObject("Black Box", resourceCulture);
+                object obj = ResourceManager.GetObject("black_box", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bootleg {
+        internal static System.Drawing.Bitmap boardwalk {
             get {
-                object obj = ResourceManager.GetObject("Bootleg", resourceCulture);
+                object obj = ResourceManager.GetObject("boardwalk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Carbon {
+        internal static System.Drawing.Bitmap bootleg {
             get {
-                object obj = ResourceManager.GetObject("Carbon", resourceCulture);
+                object obj = ResourceManager.GetObject("bootleg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,19 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Decommission {
+        internal static System.Drawing.Bitmap carbon {
             get {
-                object obj = ResourceManager.GetObject("Decommission", resourceCulture);
+                object obj = ResourceManager.GetObject("carbon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap decommission {
+            get {
+                object obj = ResourceManager.GetObject("decommission", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +153,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dome {
+        internal static System.Drawing.Bitmap dome {
             get {
-                object obj = ResourceManager.GetObject("Dome", resourceCulture);
+                object obj = ResourceManager.GetObject("dome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +163,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Downturn {
+        internal static System.Drawing.Bitmap downturn {
             get {
-                object obj = ResourceManager.GetObject("Downturn", resourceCulture);
+                object obj = ResourceManager.GetObject("downturn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +173,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Erosion {
+        internal static System.Drawing.Bitmap erosion {
             get {
-                object obj = ResourceManager.GetObject("Erosion", resourceCulture);
+                object obj = ResourceManager.GetObject("erosion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +183,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Fallen {
+        internal static System.Drawing.Bitmap fallen {
             get {
-                object obj = ResourceManager.GetObject("Fallen", resourceCulture);
+                object obj = ResourceManager.GetObject("fallen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +193,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Foundation {
+        internal static System.Drawing.Bitmap foundation {
             get {
-                object obj = ResourceManager.GetObject("Foundation", resourceCulture);
+                object obj = ResourceManager.GetObject("foundation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +203,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Getaway {
+        internal static System.Drawing.Bitmap getaway {
             get {
-                object obj = ResourceManager.GetObject("Getaway", resourceCulture);
+                object obj = ResourceManager.GetObject("getaway", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +213,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Hardhat {
+        internal static System.Drawing.Bitmap gulch {
             get {
-                object obj = ResourceManager.GetObject("Hardhat", resourceCulture);
+                object obj = ResourceManager.GetObject("gulch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +223,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Interchange {
+        internal static System.Drawing.Bitmap hardhat {
             get {
-                object obj = ResourceManager.GetObject("Interchange", resourceCulture);
+                object obj = ResourceManager.GetObject("hardhat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +233,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Intersection {
+        internal static System.Drawing.Bitmap interchange {
             get {
-                object obj = ResourceManager.GetObject("Intersection", resourceCulture);
+                object obj = ResourceManager.GetObject("interchange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +243,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Liberation {
+        internal static System.Drawing.Bitmap intersection {
             get {
-                object obj = ResourceManager.GetObject("Liberation", resourceCulture);
+                object obj = ResourceManager.GetObject("intersection", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +253,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lockdown {
+        internal static System.Drawing.Bitmap liberation {
             get {
-                object obj = ResourceManager.GetObject("Lockdown", resourceCulture);
+                object obj = ResourceManager.GetObject("liberation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +263,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lookout {
+        internal static System.Drawing.Bitmap lockdown {
             get {
-                object obj = ResourceManager.GetObject("Lookout", resourceCulture);
+                object obj = ResourceManager.GetObject("lockdown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +273,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Mission {
+        internal static System.Drawing.Bitmap lookout {
             get {
-                object obj = ResourceManager.GetObject("Mission", resourceCulture);
+                object obj = ResourceManager.GetObject("lookout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +283,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Oasis {
+        internal static System.Drawing.Bitmap mission {
             get {
-                object obj = ResourceManager.GetObject("Oasis", resourceCulture);
+                object obj = ResourceManager.GetObject("mission", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +293,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OffShore {
+        internal static System.Drawing.Bitmap oasis {
             get {
-                object obj = ResourceManager.GetObject("OffShore", resourceCulture);
+                object obj = ResourceManager.GetObject("oasis", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +303,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Outpost {
+        internal static System.Drawing.Bitmap off_shore {
             get {
-                object obj = ResourceManager.GetObject("Outpost", resourceCulture);
+                object obj = ResourceManager.GetObject("off_shore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +313,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Overwatch {
+        internal static System.Drawing.Bitmap outpost {
             get {
-                object obj = ResourceManager.GetObject("Overwatch", resourceCulture);
+                object obj = ResourceManager.GetObject("outpost", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +323,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Parish {
+        internal static System.Drawing.Bitmap overwatch {
             get {
-                object obj = ResourceManager.GetObject("Parish", resourceCulture);
+                object obj = ResourceManager.GetObject("overwatch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +333,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Piazza {
+        internal static System.Drawing.Bitmap parish {
             get {
-                object obj = ResourceManager.GetObject("Piazza", resourceCulture);
+                object obj = ResourceManager.GetObject("parish", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +343,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Resistance {
+        internal static System.Drawing.Bitmap piazza {
             get {
-                object obj = ResourceManager.GetObject("Resistance", resourceCulture);
+                object obj = ResourceManager.GetObject("piazza", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +353,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sanctuary {
+        internal static System.Drawing.Bitmap resistance {
             get {
-                object obj = ResourceManager.GetObject("Sanctuary", resourceCulture);
+                object obj = ResourceManager.GetObject("resistance", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +363,19 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Seatown {
+        internal static System.Drawing.Bitmap sanctuary {
             get {
-                object obj = ResourceManager.GetObject("Seatown", resourceCulture);
+                object obj = ResourceManager.GetObject("sanctuary", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seatown {
+            get {
+                object obj = ResourceManager.GetObject("seatown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +393,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Terminal {
+        internal static System.Drawing.Bitmap terminal {
             get {
-                object obj = ResourceManager.GetObject("Terminal", resourceCulture);
+                object obj = ResourceManager.GetObject("terminal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +403,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Underground {
+        internal static System.Drawing.Bitmap u_turn {
             get {
-                object obj = ResourceManager.GetObject("Underground", resourceCulture);
+                object obj = ResourceManager.GetObject("u_turn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +413,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap UTurn {
+        internal static System.Drawing.Bitmap underground {
             get {
-                object obj = ResourceManager.GetObject("UTurn", resourceCulture);
+                object obj = ResourceManager.GetObject("underground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +423,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Village {
+        internal static System.Drawing.Bitmap village {
             get {
-                object obj = ResourceManager.GetObject("Village", resourceCulture);
+                object obj = ResourceManager.GetObject("village", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +433,9 @@ namespace MW3_Server_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Vortex {
+        internal static System.Drawing.Bitmap vortex {
             get {
-                object obj = ResourceManager.GetObject("Vortex", resourceCulture);
+                object obj = ResourceManager.GetObject("vortex", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -112,111 +112,49 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Arkaden.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Bakaara.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Black Box.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Bootleg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Carbon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Default.dspl" />
-    <None Include="Resources\Dome.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Downturn.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Erosion.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fallen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Foundation.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Getaway.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Hardhat.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Interchange.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Intersection.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Liberation.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Lockdown.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Lookout.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Mission.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Oasis.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Outpost.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Overwatch.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Parish.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Piazza.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Resistance.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Roughneck.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sanctuary.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Seatown.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Server.cfg" />
-    <None Include="Resources\Shipbreaker.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Terminal.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Underground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UTurn.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Village.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Vortex.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MW3.ico" />
+    <Content Include="Resources\aground.png" />
+    <Content Include="Resources\arkaden.png" />
+    <Content Include="Resources\bakaara.png" />
+    <Content Include="Resources\black_box.png" />
+    <Content Include="Resources\boardwalk.png" />
+    <Content Include="Resources\bootleg.png" />
+    <Content Include="Resources\carbon.png" />
+    <Content Include="Resources\decommission.png" />
+    <Content Include="Resources\dome.png" />
+    <Content Include="Resources\downturn.png" />
+    <Content Include="Resources\erosion.png" />
+    <Content Include="Resources\fallen.png" />
+    <Content Include="Resources\foundation.png" />
+    <Content Include="Resources\getaway.png" />
+    <Content Include="Resources\gulch.png" />
+    <Content Include="Resources\hardhat.png" />
+    <Content Include="Resources\interchange.png" />
+    <Content Include="Resources\intersection.png" />
+    <Content Include="Resources\liberation.png" />
+    <Content Include="Resources\lockdown.png" />
+    <Content Include="Resources\lookout.png" />
+    <Content Include="Resources\mission.png" />
+    <Content Include="Resources\oasis.png" />
+    <Content Include="Resources\off_shore.png" />
+    <Content Include="Resources\outpost.png" />
+    <Content Include="Resources\overwatch.png" />
+    <Content Include="Resources\parish.png" />
+    <Content Include="Resources\piazza.png" />
+    <Content Include="Resources\resistance.png" />
+    <Content Include="Resources\sanctuary.png" />
+    <Content Include="Resources\seatown.png" />
+    <Content Include="Resources\terminal.png" />
+    <Content Include="Resources\underground.png" />
+    <Content Include="Resources\u_turn.png" />
+    <Content Include="Resources\village.png" />
+    <Content Include="Resources\vortex.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

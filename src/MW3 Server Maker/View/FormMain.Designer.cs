@@ -426,7 +426,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MW3_Server_Maker.Properties.Resources.Aground;
+            this.pictureBox1.Image = global::MW3_Server_Maker.Properties.Resources.aground;
             this.pictureBox1.Location = new System.Drawing.Point(31, 287);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
